@@ -1,0 +1,20 @@
+README
+by Joe Hahn, jhahn@spacescience.org, 4 June 2013.
+
+The IDL function kepler() solves Kepler's equation numerically, hopefully others
+will find this little code useful, see kepler.pro for a more detailed description of
+that solver, and have a look at test_kepler.pro to see how kepler() is used.
+I have also written this code in C++ and Java and have benchmarked
+all three codes; those other codes are uploaded to my github repositories at
+https://github.com/joehahn?tab=repositories . All three codes solve
+Kepler's equation for the eccentric anomaly E with errors < 10^(-15) radians
+for N=10^7 elliptic orbits that have eccentricities logarithmically
+distributed between 10^(-6)<e<0.999999. All three codes are executed on my
+6 year old Dell Precision T3400. The C++ code executes in 4.25 seconds while
+the Java code runs in 7.51 seconds and IDL takes 8.33 seconds to execute, so
+the Java code is 1.8 times slower than the C++ equivalent and the IDL code is
+2.0 times slower than C++. I also note that kepler() does work in GDL (the GNU
+equivalent to IDL), and that test_kepler.pro almost works in GDL...GDL doesn't
+execute the plot_oo commands that appear there. Interestingly the execution time
+in GDL is 1.8 times slower than in IDL.
+
